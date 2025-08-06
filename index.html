@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rural Community Platform</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <nav class="navbar">
+    <div class="logo">RuralConnect</div>
+    <ul class="nav-links">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#products">Products</a></li>
+      <li><a href="#news">News</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <li><button id="loginBtn">Login</button></li>
+      <li><button id="signupBtn">Sign Up</button></li>
+    </ul>
+  </nav>
+
+  <header id="home" class="hero-section">
+    <h1>Welcome to RuralConnect</h1>
+    <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=600&q=80" alt="Grocery Delivery" class="hero-img" style="max-width: 320px; width: 90%; border-radius: 18px; margin: 1.5rem auto; box-shadow: 0 4px 24px rgba(44,62,80,0.10); display: block;">
+    <p>Empowering rural communities to access essential products and services easily.</p>
+  </header>
+
+  <section id="services" class="services-section">
+    <h2>Our Services</h2>
+    <div class="services-list">
+      <div class="service-card">
+        <img src="https://img.icons8.com/ios-filled/50/000000/grocery-bag.png" alt="Grocery Delivery">
+        <h3>Grocery Delivery</h3>
+      </div>
+      <div class="service-card">
+        <img src="https://img.icons8.com/ios-filled/50/000000/doctor-male.png" alt="Healthcare Access">
+        <h3>Healthcare Access</h3>
+      </div>
+      <div class="service-card">
+        <img src="https://img.icons8.com/ios-filled/50/000000/tractor.png" alt="Farming Tools">
+        <h3>Farming Tools</h3>
+      </div>
+      <div class="service-card">
+        <img src="https://img.icons8.com/ios-filled/50/000000/school.png" alt="Education Support">
+        <h3>Education Support</h3>
+      </div>
+      <div class="service-card">
+        <img src="https://img.icons8.com/ios-filled/50/000000/water.png" alt="Water Supply">
+        <h3>Water Supply</h3>
+      </div>
+    </div>
+  </section>
+
+  <section id="products" class="products-section">
+    <h2>Available Products</h2>
+    <input type="text" id="productSearch" placeholder="Search products...">
+    <div class="products-list" id="productsList">
+      <!-- Products will be rendered by JS -->
+    </div>
+  </section>
+
+  <section id="news" class="news-section">
+    <h2>News & Updates</h2>
+    <ul class="news-list">
+      <li>New water supply project launched in Village A.</li>
+      <li>Mobile health camps scheduled for next week.</li>
+      <li>Government announces subsidy for farming equipment.</li>
+    </ul>
+  </section>
+
+  <section id="contact" class="contact-section">
+    <h2>Contact Us</h2>
+    <div class="contact-info">
+      <p><strong>Address:</strong> 123 Rural Road, Countryside</p>
+      <p><strong>Helpline:</strong> 1800-123-456</p>
+    </div>
+    <form id="contactForm">
+      <input type="text" id="contactName" placeholder="Your Name" required>
+      <textarea id="contactMessage" placeholder="Your Message" required></textarea>
+      <button type="submit">Send</button>
+    </form>
+    <div id="contactSuccess" class="success-message" style="display:none;">Thank you for contacting us!</div>
+  </section>
+
+  <!-- Signup Modal -->
+  <div id="signupModal" class="modal">
+    <div class="modal-content">
+      <span class="close" id="closeSignup">&times;</span>
+      <img src="https://img.icons8.com/color/96/000000/add-user-group-man-man.png" alt="Sign Up" style="display:block;margin:0 auto 1rem auto;max-width:80px;">
+      <h2 style="font-family:'Inter','Roboto',Arial,sans-serif;font-weight:800;letter-spacing:0.5px;">Sign Up</h2>
+      <form id="signupForm">
+        <input type="text" id="signupName" placeholder="Name" required>
+        <input type="text" id="signupPhone" placeholder="Phone" required>
+        <input type="password" id="signupPassword" placeholder="Password" required>
+        <button type="submit">Register</button>
+      </form>
+      <div id="signupSuccess" class="success-message" style="display:none;">Signup successful! Please login.</div>
+    </div>
+  </div>
+
+  <!-- Login Modal -->
+  <div id="loginModal" class="modal">
+    <div class="modal-content">
+      <span class="close" id="closeLogin">&times;</span>
+      <img src="https://img.icons8.com/color/96/000000/lock--v1.png" alt="Login" style="display:block;margin:0 auto 1rem auto;max-width:80px;">
+      <h2 style="font-family:'Inter','Roboto',Arial,sans-serif;font-weight:800;letter-spacing:0.5px;">Login</h2>
+      <form id="loginForm">
+        <input type="text" id="loginPhone" placeholder="Phone" required>
+        <input type="password" id="loginPassword" placeholder="Password" required>
+        <button type="submit">Login</button>
+      </form>
+      <div id="loginError" class="error-message" style="display:none;">Invalid credentials. Try again.</div>
+    </div>
+  </div>
+
+  <!-- Dashboard (hidden by default) -->
+  <div id="dashboard" class="dashboard-section" style="display:none;">
+    <h2>Welcome, <span id="userDisplayName"></span>!</h2>
+    <button id="logoutBtn">Logout</button>
+    <h3>Your Bookings</h3>
+    <ul id="bookingList"></ul>
+    <h3>Edit Profile</h3>
+    <form id="editProfileForm">
+      <input type="text" id="editDisplayName" placeholder="Display Name" required>
+      <input type="text" id="editPhone" placeholder="Phone" required>
+      <button type="submit">Update</button>
+    </form>
+    <div id="editProfileSuccess" class="success-message" style="display:none;">Profile updated!</div>
+  </div>
+
+  <!-- Cart (hidden by default) -->
+  <div id="cart" class="cart-section" style="display:none;">
+    <h2>Your Cart</h2>
+    <ul id="cartList"></ul>
+    <button id="closeCart">Close</button>
+    <button id="checkoutBtn">Checkout</button>
+    <div id="checkoutSuccess" class="success-message" style="display:none;">Booking successful!</div>
+  </div>
+
+  <button id="cartBtn" class="cart-btn">Cart (<span id="cartCount">0</span>)</button>
+
+  <script src="script.js"></script>
+</body>
+</html>

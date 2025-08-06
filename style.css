@@ -1,0 +1,491 @@
+/* Professional Modern Theme for RuralConnect */
+
+:root {
+  --primary: #2e7d32;
+  --primary-dark: #205723;
+  --secondary: #1976d2;
+  --accent: #ffb300;
+  --background: #f4f7fa;
+  --surface: #fff;
+  --text: #222;
+  --text-light: #666;
+  --border: #e0e0e0;
+  --shadow: 0 4px 24px rgba(44, 62, 80, 0.08);
+  --radius: 14px;
+  --transition: 0.2s cubic-bezier(.4,0,.2,1);
+}
+
+body {
+  font-family: 'Inter', 'Roboto', Arial, sans-serif;
+  margin: 0;
+  background: var(--background);
+  color: var(--text);
+  line-height: 1.6;
+}
+
+/* Navbar */
+.navbar {
+  background: var(--surface);
+  color: var(--primary);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.2rem 3vw;
+  box-shadow: var(--shadow);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+.logo {
+  font-size: 2rem;
+  font-weight: 800;
+  letter-spacing: 1px;
+  color: var(--primary);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.logo::before {
+  content: "🌾";
+  font-size: 1.5rem;
+}
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+  margin: 0;
+  padding: 0;
+}
+.nav-links li {
+  display: flex;
+  align-items: center;
+}
+.nav-links a, .nav-links button {
+  color: var(--primary);
+  text-decoration: none;
+  background: none;
+  border: none;
+  font-size: 1.05rem;
+  font-weight: 500;
+  cursor: pointer;
+  padding: 0.5rem 1.2rem;
+  border-radius: var(--radius);
+  transition: background var(--transition), color var(--transition);
+}
+.nav-links a:hover, .nav-links button:hover {
+  background: var(--primary);
+  color: #fff;
+}
+
+/* Hero Section */
+.hero-section {
+  background: linear-gradient(90deg, #e3f9e5 0%, #b2dfdb 100%);
+  color: var(--primary-dark);
+  text-align: center;
+  padding: 4rem 1rem 3rem 1rem;
+  border-radius: 0 0 var(--radius) var(--radius);
+  box-shadow: var(--shadow);
+  margin-bottom: 2rem;
+}
+.hero-section h1 {
+  font-size: 2.8rem;
+  font-weight: 900;
+  margin-bottom: 0.5rem;
+  letter-spacing: 1px;
+}
+.hero-section p {
+  font-size: 1.25rem;
+  color: var(--text-light);
+  margin-bottom: 0;
+}
+
+/* Section Styles */
+section {
+  padding: 2.5rem 1rem;
+  max-width: 1200px;
+  margin: 0 auto 2rem auto;
+  background: var(--surface);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+section h2 {
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--primary);
+  margin-bottom: 1.5rem;
+  letter-spacing: 0.5px;
+}
+
+/* Services */
+.services-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+}
+.service-card {
+  background: #f8fafc;
+  border-radius: var(--radius);
+  box-shadow: 0 2px 12px rgba(44, 62, 80, 0.06);
+  padding: 1.5rem 1rem;
+  text-align: center;
+  width: 170px;
+  transition: transform var(--transition), box-shadow var(--transition);
+  border: 1px solid var(--border);
+}
+.service-card:hover {
+  transform: translateY(-6px) scale(1.04);
+  box-shadow: 0 8px 32px rgba(44, 62, 80, 0.13);
+  border-color: var(--primary);
+}
+.service-card img {
+  width: 54px;
+  height: 54px;
+  margin-bottom: 0.7rem;
+  filter: grayscale(0.2);
+}
+.service-card h3 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--primary-dark);
+}
+
+/* Products */
+.products-section input[type="text"] {
+  width: 100%;
+  max-width: 400px;
+  padding: 0.7rem 1rem;
+  margin-bottom: 1.5rem;
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius);
+  font-size: 1rem;
+  background: #f8fafc;
+  transition: border var(--transition);
+}
+.products-section input[type="text"]:focus {
+  border-color: var(--primary);
+  outline: none;
+}
+.products-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+}
+.product-card {
+  background: #f8fafc;
+  border-radius: var(--radius);
+  box-shadow: 0 2px 12px rgba(44, 62, 80, 0.06);
+  padding: 1.5rem 1rem;
+  text-align: center;
+  width: 200px;
+  transition: transform var(--transition), box-shadow var(--transition);
+  border: 1px solid var(--border);
+  position: relative;
+}
+.product-card:hover {
+  transform: translateY(-6px) scale(1.04);
+  box-shadow: 0 8px 32px rgba(44, 62, 80, 0.13);
+  border-color: var(--primary);
+}
+.product-card img {
+  width: 64px;
+  height: 64px;
+  margin-bottom: 0.7rem;
+  filter: grayscale(0.1);
+}
+.product-card h3 {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--primary-dark);
+}
+.product-card p {
+  font-size: 1.1rem;
+  color: var(--secondary);
+  font-weight: 600;
+}
+.product-card button {
+  background: var(--primary);
+  color: #fff;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: var(--radius);
+  cursor: pointer;
+  margin-top: 0.7rem;
+  font-size: 1rem;
+  font-weight: 600;
+  transition: background var(--transition), box-shadow var(--transition);
+  box-shadow: 0 2px 8px rgba(44, 62, 80, 0.08);
+}
+.product-card button:hover {
+  background: var(--secondary);
+}
+
+/* News Section - Large and Prominent */
+.news-section {
+  padding: 3.5rem 1.5rem 3.5rem 1.5rem;
+  background: linear-gradient(90deg, #e3f2fd 0%, #f1f8e9 100%);
+  border-radius: var(--radius);
+  box-shadow: 0 6px 32px rgba(44, 62, 80, 0.10);
+  margin-bottom: 2.5rem;
+  border: 2px solid #bbdefb;
+}
+.news-section h2 {
+  font-size: 2.5rem;
+  font-weight: 900;
+  color: var(--secondary);
+  margin-bottom: 2rem;
+  letter-spacing: 1px;
+}
+.news-section ul {
+  list-style: disc inside;
+  padding-left: 1.5rem;
+  color: var(--primary-dark);
+  font-size: 1.35rem;
+  font-weight: 600;
+  line-height: 2.2;
+}
+.news-section ul li {
+  margin-bottom: 1.2rem;
+  background: #fffde7;
+  border-radius: 8px;
+  padding: 1.1rem 1.5rem;
+  box-shadow: 0 2px 8px rgba(255, 193, 7, 0.07);
+  border-left: 6px solid var(--accent);
+}
+
+/* Contact Section - Large and Prominent */
+.contact-section {
+  padding: 3.5rem 1.5rem 3.5rem 1.5rem;
+  background: linear-gradient(90deg, #fffde7 0%, #e3f2fd 100%);
+  border-radius: var(--radius);
+  box-shadow: 0 6px 32px rgba(44, 62, 80, 0.10);
+  margin-bottom: 2.5rem;
+  border: 2px solid #ffe082;
+}
+.contact-section h2 {
+  font-size: 2.5rem;
+  font-weight: 900;
+  color: var(--accent);
+  margin-bottom: 2rem;
+  letter-spacing: 1px;
+}
+.contact-section .contact-info {
+  font-size: 1.35rem;
+  font-weight: 600;
+  color: var(--primary-dark);
+  margin-bottom: 1.5rem;
+}
+.contact-section form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  max-width: 500px;
+  margin-top: 1.5rem;
+}
+.contact-section input, .contact-section textarea {
+  padding: 1rem 1.2rem;
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius);
+  font-size: 1.2rem;
+  background: #f8fafc;
+  transition: border var(--transition);
+}
+.contact-section input:focus, .contact-section textarea:focus {
+  border-color: var(--accent);
+  outline: none;
+}
+.contact-section button {
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  padding: 1rem 1.5rem;
+  border-radius: var(--radius);
+  cursor: pointer;
+  font-size: 1.2rem;
+  font-weight: 700;
+  transition: background var(--transition);
+  box-shadow: 0 2px 8px rgba(255, 193, 7, 0.08);
+}
+.contact-section button:hover {
+  background: var(--secondary);
+}
+.success-message {
+  color: var(--accent);
+  margin-top: 0.7rem;
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+.error-message {
+  color: #d32f2f;
+  margin-top: 0.5rem;
+  font-weight: 600;
+}
+
+/* Modal Styles */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 200;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: auto;
+  background: rgba(44,62,80,0.13);
+  justify-content: center;
+  align-items: center;
+}
+.modal-content {
+  background: var(--surface);
+  margin: 10% auto;
+  padding: 2.5rem 2rem 2rem 2rem;
+  border-radius: var(--radius);
+  width: 90%;
+  max-width: 370px;
+  position: relative;
+  box-shadow: var(--shadow);
+  border: 1.5px solid var(--border);
+}
+.close {
+  position: absolute;
+  top: 10px;
+  right: 18px;
+  font-size: 1.7rem;
+  color: var(--text-light);
+  cursor: pointer;
+  transition: color var(--transition);
+}
+.close:hover {
+  color: var(--primary);
+}
+
+/* Login & Signup Modal Headings - Large and Bold */
+.modal-content h2 {
+  font-size: 2.5rem;
+  font-weight: 900;
+  color: var(--secondary);
+  margin-bottom: 1.5rem;
+  letter-spacing: 1px;
+  text-align: center;
+}
+
+/* Dashboard & Cart */
+.dashboard-section, .cart-section {
+  background: var(--surface);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 2.5rem 1.5rem;
+  max-width: 520px;
+  margin: 2rem auto;
+  text-align: center;
+  border: 1.5px solid var(--border);
+}
+.dashboard-section ul, .cart-section ul {
+  list-style: none;
+  padding: 0;
+}
+.dashboard-section li, .cart-section li {
+  background: #e3f9e5;
+  margin: 0.5rem 0;
+  padding: 0.7rem;
+  border-radius: 8px;
+  color: var(--primary-dark);
+  font-weight: 500;
+}
+
+.cart-btn {
+  position: fixed;
+  bottom: 32px;
+  right: 32px;
+  background: var(--primary);
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  font-size: 1.3rem;
+  box-shadow: 0 4px 16px rgba(44, 62, 80, 0.13);
+  cursor: pointer;
+  z-index: 300;
+  transition: background var(--transition), box-shadow var(--transition);
+}
+.cart-btn:hover {
+  background: var(--secondary);
+  box-shadow: 0 8px 32px rgba(44, 62, 80, 0.18);
+}
+
+/* Responsive Design */
+@media (max-width: 900px) {
+  .services-list, .products-list {
+    flex-direction: column;
+    align-items: center;
+  }
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1rem 2vw;
+  }
+  .nav-links {
+    flex-direction: column;
+    gap: 0.7rem;
+    width: 100%;
+    margin-top: 0.5rem;
+  }
+  section {
+    padding: 1.5rem 0.5rem;
+  }
+}
+@media (max-width: 600px) {
+  .hero-section h1 {
+    font-size: 2rem;
+  }
+  .logo {
+    font-size: 1.2rem;
+  }
+  .dashboard-section, .cart-section {
+    padding: 1.2rem 0.5rem;
+  }
+  .cart-btn {
+    width: 48px;
+    height: 48px;
+    font-size: 1rem;
+    bottom: 16px;
+    right: 16px;
+  }
+  .news-section {
+    padding: 2rem 0.5rem 2rem 0.5rem;
+  }
+  .news-section h2 {
+    font-size: 1.5rem;
+  }
+  .news-section ul {
+    font-size: 1.05rem;
+  }
+  .news-section ul li {
+    padding: 0.7rem 0.7rem;
+  }
+  .contact-section {
+    padding: 2rem 0.5rem 2rem 0.5rem;
+  }
+  .contact-section h2 {
+    font-size: 1.5rem;
+  }
+  .contact-section .contact-info {
+    font-size: 1.05rem;
+  }
+  .contact-section input, .contact-section textarea {
+    font-size: 1rem;
+    padding: 0.7rem 0.7rem;
+  }
+  .contact-section button {
+    font-size: 1rem;
+    padding: 0.7rem 1rem;
+  }
+  .modal-content h2 {
+    font-size: 1.5rem;
+  }
+}
+
+/* Google Fonts Import */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap');
